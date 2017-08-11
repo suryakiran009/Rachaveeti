@@ -1,0 +1,425 @@
+n466691@argon6>ps -ef | grep httpd
+webservd 26465 26456   0   Nov 03 ?           1:41 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/web/conf/httpd.conf
+webservd 26464 26456   0   Nov 03 ?           1:26 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/web/conf/httpd.conf
+    root 26456 15276   0   Nov 03 ?           2:45 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/web/conf/httpd.conf
+webservd 26478 26473   0   Nov 03 ?           0:22 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/wiz/conf/httpd.conf
+webservd 26479 26473   0   Nov 03 ?           0:24 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/wiz/conf/httpd.conf
+    root 26473 15276   0   Nov 03 ?           2:31 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/wiz/conf/httpd.conf
+webservd 19885 26456   0   Nov 16 ?           0:52 /opt/apache/2.2.22/bin/httpd -k start -f /local/apache/web/conf/httpd.conf
+ n466691 13226 13083   0 08:48:15 pts/48      0:00 grep httpd
+ 
+ 
+ /opt/apache/avios/conf
+p466691@rousseau>ps -ef | grep httpd
+webservd 20828  8624   0   Nov 22 ?          14:12 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+    root  8624  6921   0   Oct 27 ?           3:35 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+webservd 20827  8624   0   Nov 22 ?          14:02 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+webservd 21626 21623   0   Nov 17 ?          10:43 /opt/apache/2.4.18/bin/httpd -k start -f /opt/apache/avios-group/conf/httpd.con
+ p466691  5415 13333   0 15:03:07 pts/21      0:00 grep httpd
+    root 21623  6921   0   Nov 17 ?           1:35 /opt/apache/2.4.18/bin/httpd -k start -f /opt/apache/avios-group/conf/httpd.con
+webservd 21627 21623   0   Nov 17 ?          10:46 /opt/apache/2.4.18/bin/httpd -k start -f /opt/apache/avios-group/conf/httpd.con
+webservd 20826  8624   0   Nov 22 ?           0:00 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+
+
+
+
+ 
+ 
+ 
+ 172.18.16.108 - - [01/Dec/2016:08:52:15 +0000] "GET /cms/css/minified/main.min.css HTTP/1.1" 200 101881 "http://t06web.avios.com/page-not-found" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840
+.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Insecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:15 +0000] "GET /cms/images/common/avios-logo.png HTTP/1.1" 304 - "http://t06web.avios.com/page-not-found" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.9
+9 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Insecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:15 +0000] "GET /cms/typography/MaterialIcons-Regular.woff2 HTTP/1.1" 200 42284 "http://t06web.avios.com/cms/css/minified/main.min.css" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l
+ike Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Insecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:15 +0000] "GET /cms/typography/fs_joey-medium-webfont.woff2 HTTP/1.1" 200 26852 "http://t06web.avios.com/cms/css/minified/main.min.css" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML,
+like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Insecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:23 +0000] "GET /eu/en HTTP/1.1" 500 20 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Ins
+ecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:24 +0000] "GET /page-not-found HTTP/1.1" 200 1913 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663
+641&sec=Insecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 0
+172.18.16.108 - - [01/Dec/2016:08:52:23 +0000] "GET /eu/en HTTP/1.1" 500 20 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663641&sec=Ins
+ecure&-&cms=WlzTY1kfG3TrLv2Sd4TDpBhvgql5FR0tvFL6JJsXpQLChN9F15Jc!-1159889800!-1062729209!8101!-1&app=-&dev=desktop&-" 1
+- - - [01/Dec/2016:08:52:41 +0000] "GET /monitor.html" 200 331 "-" "-" "MC=PC=-&sec=-&-&cms=-&app=-&dev=-&-" 0
+
+=====================================================================================================================================================================================================================================
+
+http://rousseau:4701/cs/Sites?lookuppage=/eu/en/collect/all-ways-to-collect
+http://rousseau:4701/cs/Sites?lookuppage=/eu/en/collect/hotels
+http://rousseau:4701/cs/Sites?lookuppage=/eu/en/collect/transportation
+
+
+http://stage.avios.com/eu/en/collect/all-ways-to-collect
+http://stage.avios.com/eu/en/collect/hotels
+http://stage.avios.com/eu/en/collect/transportation
+
+
+
+<Location ~ ^/[a-z]{2}/[a-z]{2}/*$>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+
+  <Location /cs>
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+     
+  
+=====================================================================================================================================================================================================================================
+  
+  <Location ^/en/eu/[a-z]{2}/[a-z]{2}/*$>
+	WLSRequest On
+	PathPrepend /cs/Sites?lookuppage=
+	Header add Cache-Control "private"
+	SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+</Location>
+
+<Location  /specialnumbersapi/>
+	  WLSRequest On
+	  PathTrim /specialnumbersapi		  
+	  PathPrepend /NumberCheckerWeb/specialnumbers
+</Location>
+
+======================================================================================================================================================================================================================================
+    
+	
+	<Location ~ ^/eu/en>
+		PathPrepend /cs/Sites?lookuppage=
+	Header add Cache-Control "private"
+	SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+     </Location> 
+
+	<Location ^/eu/en/collect/all-ways-to-collect>
+	PathTrim /eu/en/collect/all-ways-to-collect
+	PathPrepend /cs/Sites?lookuppage=
+	Header add Cache-Control "private"
+	SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+</Location> 
+  
+  
+  Working - How ever there is a collision with eu/en_gb on rousseau .Hence changed the configuration to 2)
+ =========
+  <Location ^/eu/en>
+		PathPrepend /cs/Sites?lookuppage=
+	Header add Cache-Control "private"
+	SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+</Location> 
+  
+  
+  
+
+  
+  
+ 2) 
+<Location ~ ^/[a-z]{2}/[a-z]{2}>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+   <Location ~ ^/media/images/>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+  
+  <Location ~ ^/media/images/>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+  </Location>
+  
+  
+  
+  
+  Argon6 - User - websupport/Monday1
+  
+  Thanks Surya.  I think the only tasks we have outstanding is regarding the WCS embedded image calls which will start with /media.  
+  Please can you update the Apache on T06 and liaise with Manifesto to get this tested on T06 (Manifesto will need to update an image in WCS so you can test it)
+  
+  WCS embedded image calls
+  
+  
+  
+  /eu/en/httpswww.avios.comgbengb
+  
+  
+  /media/images/b4-narrow.jpeg
+  
+  http://argon6:4701/cs/Sites?lookuppage=/media/images/b4-narrow.jpeg
+  
+  http://rousseau:4701/cs/Sites?lookuppage=/media/images/b4-narrow.jpeg
+  
+  rousseau not responding - may be it needs a restart
+  
+  
+  
+  Thanks Surya.
+
+We have found the following (rewrite) issue as part of today's deployment to T06.
+
+It looks like our latest rewrite implementation on T06, rewrites query parameters as well. For instnace, 
+
+accessing http://t06web.avios.com/es/ca/meu-avios?showCaptcha=false seems to be redirected to /cs/Sites?lookuppage=/es/ca/meu-avios?showCaptcha=false.
+
+ But, rewrites should be applied only requested path, but not for the query parameters (like the following).
+/cs/Sites?lookuppage={request_path}&{request_query_params}
+
+For instance, accessing http://t06web.avios.com/es/ca/meu-avios?showCaptcha=false should be rewritten to /cs/Sites?lookuppage=/es/ca/meu-avios&showCaptcha=false.
+
+Could it be possible for you to look into this issue please? Thanks!
+
+  http://t06web.avios.com/es/ca/meu-avios?showCaptcha=false
+    
+  http://argon6:4701/cs/Sites?lookuppage=/es/ca/meu-avios&showCaptcha=false
+  
+  RewriteRule ^/mbbsearch http://www.google.com/search?client=three&ip=%{ENV:ClientIP}&useragent=%1 [B,P,QSA,NC,L]
+  
+ RewriteRule ^/es/ca/meu-avios?showCaptcha=false http://argon6:4701/cs/Sites?lookuppage=/es/ca/meu-avios&showCaptcha=false
+  
+  RewriteRule /meu-avios?showCaptcha$ /es/ca/meu-avios&showCaptcha=false
+  
+  
+  <Location ~ ^/es/ca/meu-avios?*>
+   #WLSRequest On
+   PathTrim /es/ca/meu-avios?showCaptcha=false
+   PathPrepend /cs/Sites?lookuppage=/es/ca/meu-avios&showCaptcha=false
+   Header add Cache-Control "private"
+   SetHandler weblogic-handler
+   WebLogicHost argon6
+   WebLogicPort 4701
+  </Location>
+
+<Location ~ ^/media/images/>
+    PathPrepend /cs/Sites?lookuppage=
+        Header add Cache-Control "private"
+        SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+  /es/ca/meu-avios&showCaptcha=false
+  
+  http://t06web.avios.com/es/ca/meu-avios&showCaptcha=false
+  
+  /meu-avios?showCaptcha=false
+
+/es/ca/meu-avios&showCaptcha=false
+  
+
+RewriteRule /meu-avios?showCaptcha=false /es/ca/meu-avios&showCaptcha=false
+ 
+172.18.16.108 - - [09/Dec/2016:11:37:25 +0000] "GET /es/ca/meu-avios?showCaptcha=false HTTP/1.1" 404 1214 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.1
+0.203.1479137661663641&sec=Insecure&-&cms=GkvLYKJFhyqGQZ23cGhpPnWHQSS8rpsvFdMHh3cP341LvRjhbSst!-1159889800!-1062729209!8101!-1&app=x6VgYLyVsDShdTx6tH1HWTrszphTvjcwcWJ2mhxL9fphGzRN6Gjq!-771525768&dev=desktop&-" 0
+172.18.16.108 - - [09/Dec/2016:11:37:26 +0000] "GET /page-not-found HTTP/1.1" 200 1913 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" "MC=PC=192.168.10.203.1479137661663
+641&sec=Insecure&-&cms=GkvLYKJFhyqGQZ23cGhpPnWHQSS8rpsvFdMHh3cP341LvRjhbSst!-1159889800!-1062729209!8101!-1&app=x6VgYLyVsDShdTx6tH1HWTrszphTvjcwcWJ2mhxL9fphGzRN6Gjq!-771525768&dev=desktop&-" 2
+
+
+
+JAVA_OPTIONS="-d64 -showversion -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=4 -XX:+OmitStackTraceInFastThrow -XX:+DisableExplicitGC"
+
+increased the memory options - 2048 - 4096
+
+
+<Location ~ ^/[a-z]{2}/[a-z]{2}/*$>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+  </Location>
+  <Location ~ ^/[a-z]{2}/[a-z]{2}/[a-z0-9]>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost localhost
+    WebLogicPort 4701
+  </Location>
+
+  
+  
+  =========================================================
+  
+  
+  
+  
+  
+  websupport@bosch:/opt/apache/avios/bin
+$ ps -ef | grep httpd
+    root  8130  6926   0   Oct 27 ?          10:49 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+webservd 26709  8130   0   Jan 23 ?           8:59 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+webservd 26710  8130   0   Jan 23 ?           9:29 /opt/apache/2.2.22/bin/httpd -k start -f /opt/apache/avios/conf/httpd.conf
+websuppo 16696  3082   0 09:50:07 pts/7       0:00 grep httpd
+
+
+
+WLCookieName asessionid
+
+CSESSIONID
+
+
+ <Location ~ ^/[a-z]{2}/[a-z]{2}/*>
+                PathPrepend /cs/Sites?lookuppage=
+                #PathPrepend /cs/Sites
+                RequestHeader set Host t06web.avios.com
+                Header add Cache-Control "private"
+                WLCookieName CSESSIONID
+                SetHandler weblogic-handler
+                WebLogicHost localhost
+                WebLogicPort 4701
+        </Location>
+
+       <Location /cs>
+               RequestHeader set Host t06web.avios.com
+               WLCookieName CSESSIONID
+               SetHandler weblogic-handler
+               WebLogicHost localhost
+               WebLogicPort 4701
+        </Location>
+
+		
+		
+		
+		 <Location ~ ^/entry/*>
+                #WLSRequest On
+               # PathTrim /entry/*
+                PathPrepend /cs
+                WLCookieName CSESSIONID
+                Header add Cache-Control "private"
+                SetHandler weblogic-handler
+                WebLogicHost localhost
+                WebLogicPort 4701
+        </Location>
+
+       <Location ~ ^/missing-data>
+              #WLSRequest On
+              #PathTrim /missing-data
+              PathPrepend /cs
+              WLCookieName CSESSIONID
+              Header add Cache-Control "private"
+              SetHandler weblogic-handler
+              WebLogicHost localhost
+              WebLogicPort 4701
+       </Location>
+
+  
+
+  RewriteCond %{REQUEST_URI} !^(/bff/|/cas/|/cs/|/assets/|/entry/|/missing-data|/proxy/|/api/recaptcha/|/api/formfields/([A-Z]{2})|/$)
+RewriteCond %{REQUEST_URI} ^(/[a-z]{2}/[a-z]{2}(/.*)?|/media/|/$)
+RewriteRule ^(.+)$ /cs/Sites?lookuppage=$0 [QSA,PT]
+
+
+
+
+
+ ########################################
+    #     Oracle Web Center Site Url
+    #
+       <Location ~ ^/[a-z]{2}/[a-z]{2}/*$>
+       PathPrepend /cs/Sites?lookuppage=
+       #PathPrepend /cs/Sites
+       RequestHeader set Host t05web.avios.com
+        Header add Cache-Control "private"
+        WLCookieName CSESSIONID
+        SetHandler weblogic-handler
+        WebLogicHost argon10
+        WebLogicPort 4701
+      </Location>
+      <Location ~ ^/[a-z]{2}/[a-z]{2}/[a-z0-9]>
+              PathPrepend /cs/Sites?lookuppage=
+              #PathPrepend /cs/Sites
+              RequestHeader set Host t05web.avios.com
+              Header add Cache-Control "private"
+              WLCookieName CSESSIONID
+              SetHandler weblogic-handler
+              WebLogicHost argon10
+              WebLogicPort 4701
+     </Location>
+     <Location /cs>
+             WLCookieName CSESSIONID
+             SetHandler weblogic-handler
+             WebLogicHost argon10
+             WebLogicPort 4701
+     </Location>
+
+     <Location ~ ^/media/>
+             PathPrepend /cs/Sites?lookuppage=
+             #PathPrepend /cs/Sites
+             #RequestHeader set Host t05web.avios.com
+             Header add Cache-Control "private"
+             WLCookieName CSESSIONID
+             SetHandler weblogic-handler
+             WebLogicHost argon10
+             WebLogicPort 4701
+     </Location>
+     <Location ~ ^/entry/*>
+                #WLSRequest On
+               # PathTrim /entry/*
+			    PathPrepend /cs
+                WLCookieName CSESSIONID
+                Header add Cache-Control "private"
+                SetHandler weblogic-handler
+                WebLogicHost argon10
+                WebLogicPort 4701
+        </Location>
+
+       <Location ~ ^/missing-data>
+              #WLSRequest On
+              #PathTrim /missing-data
+              PathPrepend /cs
+              WLCookieName CSESSIONID
+              Header add Cache-Control "private"
+              SetHandler weblogic-handler
+              WebLogicHost argon10
+              WebLogicPort 4701
+       </Location>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

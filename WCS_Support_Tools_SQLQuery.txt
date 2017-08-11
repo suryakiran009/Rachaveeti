@@ -1,0 +1,27 @@
+select * from dimension d where d.name like 'es_ES'
+id esES > 1476968350159
+caES > 1476968353929
+enES > 1476968353867
+
+id itIT > 1476968354023		
+enIT > 1476968354424		3 fails
+
+
+select * from Page_Dim pd where pd.CS_DIMENSIONID like '1476968350159'
+
+
+select * from Page p, Page_Dim pd where pd.CS_DIMENSIONID like '1476968350159' and pd.cs_ownerid = p.id
+
+select p.id as assetid, 'Page' as assettype from Page p , Page_Dim pd where (pd.CS_DIMENSIONID like '1476968350205' OR pd.CS_DIMENSIONID like '1476968353846') and pd.cs_ownerid = p.id
+
+
+select p.id as assetid, 'Page' as assettype from Page p order by updateddate
+
+
+
+en_EU > '1476968350163' > broken content > Page 1476968375082
+
+
+select p.id as assetid, 'Page' as assettype from Page p, Page_Dim pd where pd.CS_DIMENSIONID like '1476968350159' and pd.cs_ownerid = p.id
+
+select p.id as assetid, 'Page' as assettype from Page p, Page_Dim pd where (pd.CS_DIMENSIONID like '1476968350205' OR  pd.CS_DIMENSIONID like '1476968350163') and pd.cs_ownerid = p.id

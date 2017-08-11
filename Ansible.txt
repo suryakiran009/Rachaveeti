@@ -1,0 +1,1218 @@
+opt/java
+
+/opt/jdk/jdk170_101
+
+p821134
+
+aviosstage
+ansible Vault password for host file - argon18 : aviosdev
+
+
+ansible-playbook -k -u n466691 -i hosts remotetest.yml --vault-password-file vault_pass.txt --step -vvvv
+
+[suryavm@suryavm installation]$ ansible-playbook -k -u n466691 -i hosts remotetest.yml --vault-password-file vault_pass.txt -vvvv
+Using /opt/ansible-wcs/installation/ansible.cfg as config file
+SSH password:
+Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+
+PLAYBOOK: remotetest.yml *******************************************************
+1 plays in remotetest.yml
+
+PLAY [Test to check ansible script can reach Avios server] *********************
+
+TASK [setup] *******************************************************************
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/core/system/setup.py
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479 `" && echo ansible-tmp-1479726056.98-40959204629479="` echo $HOME/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479 `" ) && sleep 0'"'"''
+<argon18> PUT /tmp/tmpwQY7M1 TO /avios/n466691/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479/setup.py
+<argon18> SSH: EXEC sshpass -d12 sftp -o BatchMode=no -b - -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r '[argon18]'
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chmod u+x /avios/n466691/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479/ /avios/n466691/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479/setup.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r -tt argon18 '/bin/sh -c '"'"'/usr/bin/python /avios/n466691/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479/setup.py; rm -rf "/avios/n466691/.ansible/tmp/ansible-tmp-1479726056.98-40959204629479/" > /dev/null 2>&1 && sleep 0'"'"''
+ok: [argon18]
+
+TASK [remote_test : Heartbeat test] ********************************************
+task path: /opt/ansible-wcs/installation/roles/remote_test/tasks/main.yml:3
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/core/commands/command.py
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo $HOME/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558 `" && echo ansible-tmp-1479726069.48-2692566427558="` echo $HOME/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558 `" ) && sleep 0'"'"''
+<argon18> PUT /tmp/tmpOiOwBx TO /avios/n466691/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558/command.py
+<argon18> SSH: EXEC sshpass -d12 sftp -o BatchMode=no -b - -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r '[argon18]'
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chmod u+x /avios/n466691/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558/ /avios/n466691/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558/command.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r -tt argon18 '/bin/sh -c '"'"'/usr/bin/python /avios/n466691/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558/command.py; rm -rf "/avios/n466691/.ansible/tmp/ansible-tmp-1479726069.48-2692566427558/" > /dev/null 2>&1 && sleep 0'"'"''
+changed: [argon18] => {
+    "changed": true,
+    "cmd": [
+        "echo",
+        "remote",
+        "test"
+    ],
+    "delta": "0:00:00.134518",
+    "end": "2016-11-21 11:01:13.882116",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "echo remote test",
+            "_uses_shell": false,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "warn": true
+        },
+        "module_name": "command"
+    },
+    "rc": 0,
+    "start": "2016-11-21 11:01:13.747598",
+    "stderr": "",
+    "stdout": "remote test",
+    "stdout_lines": [
+        "remote test"
+    ],
+    "warnings": []
+}
+
+PLAY RECAP *********************************************************************
+argon18                    : ok=2    changed=1    unreachable=0    failed=0
+
+===================================================================================================================
+
+
+
+
+ansible-playbook -k -u weblogic -i hosts manifesto_wcs_complete.yml <encryption-method>
+
+ansible-playbook -k -i hosts manifesto_wcs.yml --vault-password-file vault_pass.txt -vvvv
+
+ansible-playbook -k -i hosts manifesto_wcs.yml --vault-password-file vault_pass.txt --step -vvvv
+
+===
+
+    "size": 2,
+    "state": "directory",
+    "uid": 1007
+}
+
+TASK [wcs_install : Copy deploy script to server] ******************************
+task path: /opt/ansible-wcs/installation/roles/wcs_install/tasks/main.yml:24
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /tmp/ansible-tmp-1479726355.68-142017750483569 `" && echo ansible-tmp-1479726355.68-142017750483569="` echo /tmp/ansible-tmp-1479726355.68-142017750483569 `" ) && sleep 0'"'"''
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/core/files/stat.py
+<argon18> PUT /tmp/tmprL_Plc TO /tmp/ansible-tmp-1479726355.68-142017750483569/stat.py
+<argon18> SSH: EXEC sshpass -d12 sftp -o BatchMode=no -b - -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r '[argon18]'
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'setfacl -m u:weblogic:rx /tmp/ansible-tmp-1479726355.68-142017750483569/ /tmp/ansible-tmp-1479726355.68-142017750483569/stat.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chmod u+x /tmp/ansible-tmp-1479726355.68-142017750483569/ /tmp/ansible-tmp-1479726355.68-142017750483569/stat.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chown weblogic /tmp/ansible-tmp-1479726355.68-142017750483569/ /tmp/ansible-tmp-1479726355.68-142017750483569/stat.py && sleep 0'"'"''
+ [WARNING]: Using world-readable permissions for temporary files Ansible needs to create when becoming an unprivileged user. This may be insecure. For information on securing this, see https://docs.ansible.com/ansible/become.html
+#becoming-an-unprivileged-user
+
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chmod a+rx /tmp/ansible-tmp-1479726355.68-142017750483569/ /tmp/ansible-tmp-1479726355.68-142017750483569/stat.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansi
+------------
+
+
+
+/opt/ansible-wcs/installation/roles/wcs_install/tasks
+
+to check the install status --> /opt/wcs11/ominstallinfo/install_log.log
+tail -f /tmp/install_out.log
+
+
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r argon18 '/bin/sh -c '"'"'chmod a+rx /tmp/ansible-tmp-1479730925.9-115133479158362/ /tmp/ansible-tmp-1479730925.9-115133479158362/command.py && sleep 0'"'"''
+<argon18> ESTABLISH SSH CONNECTION FOR USER: n466691
+<argon18> SSH: EXEC sshpass -d12 ssh -vvv -C -o ControlMaster=auto -o ControlPersist=60s -o User=n466691 -o ConnectTimeout=10 -o ControlPath=/home/suryavm/.ansible/cp/ansible-ssh-%h-%p-%r -tt argon18 '/bin/sh -c '"'"'/usr/local/bin/sudo -H -S -n -u weblogic /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-alggmcuxkhpksvyltrjgxkhgmemuvvmv; /usr/bin/python /tmp/ansible-tmp-1479730925.9-115133479158362/command.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+
+
+
+TASK [wcs_install : Initiate the silent installer process] *********************
+
+
+ansible-playbook -k -i hosts manifesto_wcs.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+
+
+add the below in the config.xml
+
+Under 
+===========================
+<server>
+    <name>cs-admin</name>
+
+<log>
+      <file-name>/opt/bea/user_projects/domains/avios-cs/logs/server.log</file-name>
+      <rotation-type>bySize</rotation-type>
+      <number-of-files-limited>true</number-of-files-limited>
+      <file-count>7</file-count>
+      <file-min-size>5000</file-min-size>
+      <rotate-log-on-startup>false</rotate-log-on-startup>
+      <log-file-rotation-dir>/opt/bea/user_projects/domains/avios-cs/logs-archive</log-file-rotation-dir>
+      <logger-severity>Info</logger-severity>
+      <log-file-severity>Debug</log-file-severity>
+      <stdout-severity>Notice</stdout-severity>
+      <domain-log-broadcast-severity>Notice</domain-log-broadcast-severity>
+      <memory-buffer-severity>Trace</memory-buffer-severity>
+      <log4j-logging-enabled>false</log4j-logging-enabled>
+      <redirect-stdout-to-server-log-enabled>true</redirect-stdout-to-server-log-enabled>
+      <domain-log-broadcaster-buffer-size>10</domain-log-broadcaster-buffer-size>
+    </log>
+
+
+================
+<server>
+    <name>cs1</name>
+
+
+<log>
+      <date-format-pattern>dd-MMM-yyyy HH:mm:ss z</date-format-pattern>
+      <file-name>/opt/bea/user_projects/domains/avios-cs/logs1/server.log</file-name>
+      <rotation-type>byTime</rotation-type>
+      <number-of-files-limited>true</number-of-files-limited>
+      <file-count>28</file-count>
+      <file-time-span>24</file-time-span>
+      <rotation-time>00:00</rotation-time>
+      <rotate-log-on-startup>false</rotate-log-on-startup>
+      <log-file-rotation-dir>/opt/bea/user_projects/domains/avios-cs/logs1-archive</log-file-rotation-dir>
+      <buffer-size-kb>8</buffer-size-kb>
+      <logger-severity>Info</logger-severity>
+      <log-file-severity>Debug</log-file-severity>
+      <stdout-severity>Notice</stdout-severity>
+      <stdout-format>standard</stdout-format>
+      <stdout-log-stack>true</stdout-log-stack>
+      <stacktrace-depth>5</stacktrace-depth>
+      <domain-log-broadcast-severity>Notice</domain-log-broadcast-severity>
+      <memory-buffer-severity>Debug</memory-buffer-severity>
+      <memory-buffer-size>10</memory-buffer-size>
+      <log4j-logging-enabled>false</log4j-logging-enabled>
+      <redirect-stdout-to-server-log-enabled>true</redirect-stdout-to-server-log-enabled>
+      <redirect-stderr-to-server-log-enabled>true</redirect-stderr-to-server-log-enabled>
+      <domain-log-broadcaster-buffer-size>10</domain-log-broadcaster-buffer-size>
+      <server-logging-bridge-use-parent-loggers-enabled>false</server-logging-bridge-use-parent-loggers-enabled>
+    </log>
+
+
+=================================
+
+Created Generic data source and target deploy to both admin and Managed.
+
+Name - csDataSource
+
+
+Stream Chunk Size: 256
+
+jdbc:oracle:thin:@oxygen:1521:CSOXY
+
+oracle.jdbc.OracleDriver
+
+cs6_owner/cs6t3mpl4t3 - this login is for argon6 cs domain
+
+cs18_owner/parr0t# - This login is for argon18 cs domain
+
+
+
+WebCenterSites_11.1.1.8.0
+
+=========================================================================================================================
+
+/opt/bea/user_projects/domains/avios-cs/applications/cs
+n466691@argon6>grep argon6 */*
+Xcelerate/SampleSites.html:        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=http://argon6:4701/cs/ContentServer?pagename=OpenMarket/Demos/index">
+
+
+
+/opt/bea/user_projects/domains/avios-cs/applications/cs
+n466691@argon6>grep argon6 */*/*
+WEB-INF/classes/AdvPub.xml:                             <value>http://argon6:4701/cs/ContentServer</value>
+WEB-INF/classes/satellite.properties:host=argon6
+WEB-INF/classes/SSOConfig.xml:    <property name="casUrl" value="http://argon6:4701/cas" />
+WEB-INF/classes/SSOConfig.xml:  <property name="casInternalURL" value="http://argon6:4701/cas" />
+Xcelerate/wsdl/Asset.wsdl:                      <soap:address location="http://argon6:4701/cs/ContentServer" />
+Xcelerate/wsdl/AssetSet.wsdl:                   <soap:address location="http://argon6:4701/cs/ContentServer"/>
+Xcelerate/wsdl/AssetType.wsdl:                  <soap:address location="http://argon6:4701/cs/ContentServer"/>
+Xcelerate/wsdl/Miscellaneous.wsdl:                      <soap:address location="http://argon6:4701/cs/ContentServer"/>
+Xcelerate/wsdl/SitePlan.wsdl:                   <soap:address location="http://argon6:4701/cs/ContentServer"/>
+
+
+================================================================================
+
+Requested DBA to create a new Schema - cs18_owner.
+
+parr0t#
+
+01293 662291  
+
+
+================================================
+
+Unable to launch http://argon18:4701/cs/HelloCS
+
+issue identified - used curl command.
+
+curl -v http://argon18:4701/cs/HelloCS - Connection refused
+
+curl -v http://localhost:4701/cs/HelloCS - works
+
+
+Issue was with the Managed Server "Listen Address" configuration.It was set as "localhost" - removed the same and restarted the managed server to make it work.
+
+========================
+
+ansible-playbook -k -u weblogic -i hosts manifesto_wcs_patch.yml <encryption-method>
+
+ansible-playbook -k -i hosts manifesto_patch.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts manifesto_patch.yml --vault-password-file vault_pass.txt --step --limit @/opt/ansible-wcs/installation/manifesto_patch.retry  -vvvv
+
+ansible-playbook -k -u weblogic -i hosts manifesto_wcs_ehcache.yml <encryption-method>
+
+ansible-playbook -k -i hosts manifesto_ehcache.yml --vault-password-file vault_pass.txt  -vvvv
+
+ansible-playbook -k -i hosts manifesto_ehcache.yml --vault-password-file vault_pass.txt --step -vvvv
+
+=======================
+
+
+cp  -R  /var/tmp/manifesto/deployment/avios-complete-4.0/assets  /local/apache/web/htdocs/ 
+
+
+catalog_manager_url: http://192.168.10.239:4701/cs/CatalogManager
+    content_server_url: http://192.168.10.239:4701/cs/ContentServer
+
+
+ remote_user: n466691
+ 
+ 
+
+
+cas_host_name: "argon18"
+    cas_port_number: "4701"
+    cas_host_name_local: "argon18"
+    cas_port_number_local: "4701"
+    cas_host_name_actual: "192.168.10.239"
+    ip_address: "192.168.10.239"
+
+
+
+
+
+
+========================================================================================================================================
+Avios-cOMPLETE -4.0
+=======================
+
+
+ansible-playbook -k -i hosts manifesto_patch.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon18" manifesto_deployment.yml --vault-password-file vault_pass.txt -vvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon18" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon10" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=bosch" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+updated manifesto_deployment.yml - removed argon18 hostname and replaced it with "variable_host"
+
+====
+
+
+
+ssh-copy-id -i /home/suryavm/.ssh/id_rsa.pub rousseau
+
+
+ansible-playbook -k -u weblogic -i hosts remotetest.yml <encryptionmethod>
+
+ansible-playbook -k -u p466691 -i hosts remotetest.yml --vault-password-file vault_pass.txt -vvvv
+
+
+
+
+/software_library/websupport/common-files/prod
+
+Avios-Complete -4.3
+===========================
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=rousseau" manifesto_deployment.yml --vault-password-file vault_pass.txt -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=rousseau" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon18" manifesto_deployment.yml --vault-password-file vault_pass.txt -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon7" manifesto_deployment.yml --vault-password-file vault_pass.txt -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon7" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+
+/var/tmp/manifesto/deployment/avios-complete-4.3/csdt-client/deployment.log and /opt/wcs11/logs/sites.log
+
+
+Failed on Execute csdt_import.sh (NOTE THIS CAN TAKE A WHILE...) step
+
+* Escalated to Manifesto with output from ansible, /var/tmp/manifesto/deployment/avios-complete-4.0/csdt-client/deployment.log and /opt/wcs11/logs/sites.log *
+** Manifesto provided me with a new 4.1 deployment **
+
+- Copied avios-complete-4.1.tar from /var/tmp/manifesto on argon6 to My VM
+- Created a new avios-complete-4.0.zip
+- Copied the zip file to /var/tmp/manifesto/deployment manually on rousseau
+- Run playbook again in step mode.  Skip the "Delete installation media on server" task (Typing N) and "Copy complete package" (Typing N)  Note the "complete package" step is the unzip
+  OR Run all the steps up until "Copy complete package", manually copy the zip file to /var/tmp/manfiesto/deployment and the Type N to skip the "Copy complete package" step and then run each subsequent step
+	ansible-playbook -k -i hosts --extra-vars "variable_host=rousseau" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+	
+Failed on Execute csdt_import.sh (NOTE THIS CAN TAKE A WHILE...) step
+
+* Escalated to Manifesto with output from ansible, /var/tmp/manifesto/deployment/avios-complete-4.0/csdt-client/deployment.log and /opt/wcs11/logs/sites.log *
+=====================
+
+**Manifesto advised to change the package file name in rousseau ( host file) to the latest package version.
+
+i.e - on the ansible machine (VM) - 
+
+- cd host_vars
+-ansible-vault edit rousseau
+password - aviosstage
+
+edit package file name :  package_filename: avios-complete-4.X ( where X is a number)
+
+The unarchived packaged avios-complete-4.1.tar was having avios-complete-4.0 package. Hence renamed avios-complete-4.0 to avios-complete-4.1.
+
+
+Now executed the ansible in step mode again 
+
+However the s"Execute csdt_import.sh (NOTE THIS CAN TAKE A WHILE...)"
+
+Error&log details shared with Manifesto 
+
+-- log path /var/tmp/manifesto/deployment/avios-complete-4.1/csdt-client/deployment.log and /opt/wcs11/logs/sites.log *
+
+manifesto identified some missing files under cs_workspace.Hence new package(avios-complete-4.2.tar) has been provided for the deployment.
+
+Avios-Complete -4.2
+====================
+
+**Extracted the new tar file under /var/tmp/manifesto/deployment and start running ansible in step mode
+
+Error occured again while executing - "Execute csdt_import.sh (NOTE THIS CAN TAKE A WHILE...)" 
+
+Please find the error below,
+
+Caused by: java.io.FileNotFoundException: /opt/wcs11/export/envision/cs_workspace/src/_metadata/ASSET/Media_C/8/67/Avios with British Airways - en.File(acf8a536-55bf-401f-9ac1-fab977f2440f).flights-british-airways-bg.jpg (No such file or directory)
+                at java.io.FileInputStream.open(Native Method)
+                at java.io.FileInputStream.<init>(FileInputStream.java:146)
+                at com.fatwire.realtime.packager.FSDataStore$FileStorableImpl.getInputStream(FSDataStore.java:812)
+                ... 59 more
+
+
+
+
+As per the above error - .jpg file is missing under the path mentioned in the above log.
+
+**The root cause for this has been identified as a corrupted tar file (package) as the the .jpg filename is not completed saved while creating the tar file.
+
+ex:- the file name is saved as " Avios with British Airways - en.File(acf8a536-55bf-401f-9ac1-fab977f2440f).flights-british-airway- " and the last bit of the name missed out while creating the tar file.
+
+
+Avios-Complete -4.3
+====================
+Manifesto has now provided three package files under /var/tmp/manifestocopy on argon6
+
+drwxr-xr-x   8 MBrooks  weblogic      13 Nov 25 15:39 avios-complete-4.3
+-rw-r--r--   1 MBrooks  weblogic 220942676 Nov 25 16:37 avios-complete-4.3.zip
+-rw-r--r--   1 MBrooks  weblogic 235550720 Nov 25 16:43 avios-complete-4.3.tar
+
+
+avios-complete-4.3.zip from the above has been copied on to rousseau.
+
+TASK [deployment : Copy catalog mover script to server] ************************
+
+    "msg": "Unable to find '../files/catalogmover.sh' in expected paths."
+	
+manifesto has provided new catalogmover script ..the same has bee copied to proceed with the installation.
+
+The script failed to find ESAPI.properties as the same is missing under the mentioned location -/opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/ .
+
+
+logs - /var/tmp/manifesto/deployment/avios-complete-4.1/csdt-client/deployment.log and /opt/wcs11/logs/sites.log have been shared with manifesto.
+
+Reply from Manifesto - 
+
+Have verified the log and it looks like the import of the mentinoed catalogs are successful. Please continue with the further steps of the release.
+
+"Successfully imported /var/tmp/manifesto/deployment/avios-complete-4.3/sites/catalogs/IndexSourceMetaDataConfig.html",
+        "CatalogMover exited."
+"Successfully imported /var/tmp/manifesto/deployment/avios-complete-4.3/sites/catalogs/AssetIndexSourceConfig.html",
+        "CatalogMover exited."
+
+The indicated error messgaes on ESAPI.properties can safely be ignored as per the attached Oracle documention.
+
+Hi, 
+
+Yes, the logs for the catalog mover import are a bit messy, but all those warnings and errors can be ignored as like Selva said, the two imports completed successfully. The remaining part of the deployment is the two web app components deployment and then there are some manual steps at the end of the release note and a smoke test to verify. 
+
+Thanks,
+Matt
+=====
+Installtion completed successfully.
+
+avios-cms-properties and application.properties files have been updated with correct hostname and port as the RestofEurope home page was not getting loaded.
+
+
+========================================================================
+
+The below configuration has been updated across all the servers to launch/view http://*.avios.com/eu/en page.
+
+<Location ~ ^/[a-z]{2}/[a-z]{2}>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+  <Location /cs>
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+  
+   <Location ~ ^/media/images/>
+    PathPrepend /cs/Sites?lookuppage=
+    #PathPrepend /cs/Sites
+    #RequestHeader set Host cmstest.avios.com
+    Header add Cache-Control "private"
+    #WLCookieName TESTSESSIONID
+    SetHandler weblogic-handler
+    WebLogicHost argon6
+    WebLogicPort 4701
+  </Location>
+  
+  
+  =====================================
+  
+  
+  Location ~ ^/[a-z]{2}/[a-z]{2}/*$/
+
+
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+
+
+======================================================================================================================================================================================================================================
+
+
+
+avios_complete_5.0 deployment
+------------------------------
+Deliverables - Release_B deployment document
+               csdt_import.sh - only for staging ( as Manifesto is currently peforming content entry on staging and they don't want this script to erase all the updated content)
+			   avios-complete-5.0.zip - copied on argon6
+			   
+
+The below entries have modified on the host file - rousseau/argon7 etc under host_vars ( ansible directory)
+
+package_filename: avios-complete-5.0
+current_version: 5.0-RC1
+previous_version: 4.0-RC1
+cms_platform_jar: avios-cms-platform-5.0-RC1.jar
+cms_platform_jar_previous: avios-cms-platform-4.0-RC1.jar
+
+15/Dec/2016 - 
+The below major issues have been identified after the deployment of avios-complete-5.0 on argon 7.The same have been notified to Manifesto.
+Content Tree --> The Continents and Country language is missing under the 'Page Furniture' 
+The eu/en home page is not getting loaded completely after the deployment of avios-complete-5.0
+
+Manifesto suggested to run the below steps -
+
+Build Avios language fall back Locale (Hierarchy) Tree:
+Access http://<<domain_or_host>>:[<<port>>]/cs/ContentServer?pagename=Avios/Build/LocaleTree on the environment wherein you would like to build Locale (Hierarchy) Tree for the first time. E.g. Access http://argon6/cs/ContentServer?pagename=Avios/Build/LocaleTree on argon6 environment. Ensure that you see the following response on the page
+
+Regenerate Page URLs:
+1.	Login to Editorial CMS Interface to the environment (e.g. http://argon6:4701/cs/) wherein the deployment was performed with GeneralAdmin privilege (role) [e.g. fwadmin].
+2.	Choose Avios on the Site Selection dropdown (which you will find on the top right corner).
+3.	Navigate to Admin app.
+4.	Navigate to Admin (tab) ? Asset Types ? Page and double click on URL Pattern.
+5.	Click on Regenerate button on the form URL Patterns loaded on the right hand side frame and click on Ok on the popup 'Are you sure you want to regenrate all the urls?'
+
+The above steps failed to resolve the issues.
+
+Manifesto identified an issue with one of the jar files delivered as part of 5.0 and requested us to replace the manifestocopy - avios-cms-platform-5.0-RC1.jar with manifestocopy - avios-cms-platform-5.0-RC2.jar 
+under /opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/lib and restart weblogic.
+
+However after further investigation Manifesto has found that there's some content missing on the argon7 WCS and requested us to re-run the Execute csdt_import.sh with the old file as the file provided for this release was 
+only for staging.
+
+Deployment of Staging
+---------------------
+
+The below error occurred while performing "Execute csdt-import.sh" step on staging ( though the ansible script continued to run the next steps).
+ 
+we haven't copied the  rest-template-connection-configurations.xml  prior to the deployment as it was mentioned in the Post Installation Steps.
+ 
+Please suggest if we can copy the same under <<cs-app-dir>>/WEB-INF/classes/ and re-run Exectue csdt-import.sh  again.
+
+
+java.io.FileNotFoundException: The RestTemplate connection configuration file rest-template-connection-configurations.xml not found in the classpath.
+        at uk.co.manifesto.avios.wcs.http.client.RestTemplateFactory.initConfiguration(RestTemplateFactory.java:50)
+        at uk.co.manifesto.avios.wcs.http.client.RestTemplateFactory.getRestTemplate(RestTemplateFactory.java:63)
+		
+		
+copied the rest xml file under <<cs-app-dir>>/WEB-INF/classes/ and re-ran Executed csdt-import.sh step.
+
+
+Update from Manifesto
+=====================
+We have noticed that there was a line missed from the new csdt_import.sh so one file did not get imported correctly, which is why the drop downs are not functioning. 
+Would it be possible for you to add the following line to the new csdt_import.sh file at line 36 (above the entry for SiteEntry) and run the csdt_import.sh step of the deployment? 
+
+java -classpath $CLASSPATH com.fatwire.csdt.client.main.CSDT $URL username=$USERNAME password=$PASSWORD cmd=$COMMAND resources=CSElement:* | tee -a deployment.log
+
+The above entry has been added to csdt-import.sh and re-ran Execute csdt-import.sh.
+
+After running the above script again the issue got resolved.
+
+
+
+cp  -R  /var/tmp/manifesto/deployment/avios-complete-4.0/assets  /local/apache/web/htdocs/ 
+
+
+the above path is to copy assets delivered as part of the package on to the apache htdocs folder on the respective environment.
+
+
+09/JAN/2017 -content population - site tree and page generation script
+=======================================================================
+
+Hi Jon,
+
+The team has completed the script creation and the packaging around it. 
+
+Please see below the notes from the team. Also, I have attached the relevant package. The information within the wiki pages referenced have been attached as PDF documents.
+
+Could we please have the package deployed and the scripts run on Monday, as per previous agreement?
+
+
+Instructions for Avios:
+
+- This assumes that the user has the Manifesto ansible package and has base understanding of how to run the package (if not, see the Avios installation guides)
+- Unzip the attached package, place the manifesto_sitetree.yml under the 'installation' folder level. Place the sitetree folder at the 'roles' folder level. 
+- Update the host_vars with the new values from the argon6 file relative for the environment to be run on
+- Command to run the playbook ansible-playbook -k -u weblogic -i hosts --extra-vars "variable_host=argon6" manifesto_sitetree.yml
+
+Once all complete, Selva has supplied the below Wiki pages on the steps to run the new scripts
+
+1. Default Locale (English) Setter - https://manifesto.atlassian.net/wiki/display/AVIOS/Default+Locale+%28English%29+Setter#suk=ff808081507d4cdd015093e4d8cf0003
+
+2. Site Tree Navigation Copier - https://manifesto.atlassian.net/wiki/display/AVIOS/Site+Tree+Navigation+Copier#suk=ff808081507d4cdd015093e4d8cf0003(This page inturn has a ref. to Regenerate Page URLs - https://manifesto.atlassian.net/wiki/display/AVIOS/Regenerate+Page+URLs#suk=ff808081507d4cdd015093e4d8cf0003)
+
+
+
+JAVA_OPTIONS="-d64 -showversion -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:ParallelGCThreads=4 -XX:+OmitStackTraceInFastThrow -XX:+DisableExplicitGC"
+
+increased the memory options - 2048 - 4096
+
+The Unarchive issue is basically due to the character space given before 'unarchive' command on main.yml file.
+There should be atleast 4 free character space before unarchive command on main.yml.Please find the below sytax for your reference.
+
+# Unarchive patch folder
+  - name: Unzip WCS patch archive
+   unarchive:
+               src=../files/p23321734_111180_Generic.zip
+               dest={{ wcs_info.dirs.wcs_media_directory}}/patch
+    become: yes
+    become_user: weblogic
+    tags:
+      - wcs-unzip-patch
+      - wcs-patch
+
+
+There is no need to follow the below steps to resolve unarchive issue.	  
+
+
+
+
+
+
+
+  
+Unarchive issue - resolved
+===========================
+
+slash is not mandatory...
+
+dest must end in a slash! This is because it uses pythons os.path.dirname to check if the directory is writable - if you have write access to say /usr/local, and use dest=/usr/local, it will actually check whether you have write access to /usr, and fail if you don't. 
+
+So use dest=/usr/local/
+
+http://willthames.github.io/tips/2014/04/17/using-unarchive-with-local-archives.html
+
+
+=======================================================================================================
+
+
+
+wcs_info.dirs.wcs_archive_copy_location
+we have edited the above path i.e /var/tmp to /var/tmp/ in the host files to fix this issue.
+
+The below is the syntax.
+
+ - unarchive:
+               src=../files/ofm_sites_generic_11.1.1.8.0_disk1_1of1.zip
+               dest={{wcs_info.dirs.wcs_archive_copy_location}}
+    #sudo: yes
+    become: yes
+    become_user: weblogic
+    tags:
+      - wcs
+	  
+	  
+
+===================================================================================================
+
+
+Please can you roll out WCS to neon12 and bosch (preprod - Production server).  
+As usual the DB schemas will need creating first and the weblogic domains.  There is not deadlines for these so happy for you to keep testing the unarchive first.
+
+
+cp -R /var/tmp/manifesto/deployment/avios-complete-4.3/assets /local/apache/web/htdocs/ 
+
+cp -R /var/tmp/manifesto/deployment/avios-complete-5.0/assets /local/apache/web/htdocs/
+
+
+
+ wcs_sitetree_directory: "/var/tmp/manifesto/sitetree"
+ 
+  wcs_sitetree_package_filename: "avios-cms-platform-scripts-csdt.zip"
+  
+  
+  
+ansible-playbook -k -u weblogic -i hosts --extra-vars "variable_host=argon6" manifesto_sitetree.yml
+  
+ 
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_sitetree.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+
+Release C 16/02/2017 - Avios -compelte 6.1
+==========================
+created Login Page configuration folder under Page furniture as it was missing.
+
+steps to create --> Content --> new --> Page Furniture Folder
+
+SignOut Page - Hero Banner folder - uner Module -->Hero Banner --> Sample Hero banner with only Image
+
+
+
+
+Hello Surya,
+
+We don't seem to be able to access t12web.avios.com, but have access to neon12 so have been able to make some progress on diagnosing the issues. 
+
+The release notes we produce are generally specific for a target environment as configuration will be slightly different based on the status of content on that environment. 
+
+Please complete the following steps:
+
+1. I have included a new RC2 release version of the release C package at /var/tmp/manifestocopy on T06, please use this package as it should fix some of the issues are seeing.
+
+2. Included is the full CSDT import script in the package that will allow import of sample data (any further releases on environments with content should use the staging CSDT script) - I will look at sending an update to the Ansible package that will allow for clearer differentiation here in future if there is time. 
+
+3. The image issue is due to ImageMagick not being set up in the WCS properties file correctly (I have manually fixed this in the new package for T12 so that step in the release notes can be skipped).
+
+4. Run the package installation as normal
+
+5. The Site Tree Navigation Copier was created for the Staging environment in order to create site tree for other markets (FR, ES, IT) based on EU automatically to avoid manual effort. Since this is a test environment and has got test data already as part of release, the existing site tree for FR, IT and ES should be deleted before using this tool:
+•	Drag and drop nodes on the site tree under France, Italy and Spain (the countries should remain) onto Unplaced Pages section and delete the pages
+•	Re-Run the utilities
+Please note we have access to neon12 WCS interface so can assist with step 5 if required. 
+
+Thanks, please let us know if there are any issues with any of the above. 
+
+Cheers,
+
+
+recaptcha.site.key=6Ld6qgkUAAAAAD1fZ7svwAoudEr8D4Il6H-oPasg
+recaptcha.site.key=6Ld6qgkUAAAAAD1fZ7svwAoudEr8D4Il6H-oPasg
+recaptcha.site.key=6Ld6qgkUAAAAAD1fZ7svwAoudEr8D4Il6H-oPasg
+
+
+
+
+21/FEB/2017
+==================
+
+
+Hi,
+ 
+As part of release C on T06, we have released an SSO component reg. integration with classic platform and this component uses session to persist the data temporarily (error/warning messages) that would be displayed in the next request (and cleaned up from session). This functionality works fine on our local environments, but doesn’t works on T06 and think this might be due to the fact that weblogic tries to create a new session for every request instead of using the existing one (probably due to a configuration issue).
+ 
+I think weblogic uses JSESSIONID to manage the session and have noticed that it supplies a new JSESSIONID for every request when I browse through t06web.avios.com/eu/en.
+ 
+E.g.:
+ 
+Set-Cookie:JSESSIONID=gnVTYqsCLpb4yvggT5nTp134M4F1z1mD03JTZ1qfDL4yVd0pSVTS!-2116107196!-1062729202!4701!-1; path=/cs; HttpOnly - t06web.avios.com/eu/en
+Set-Cookie:JSESSIONID=lsvRYqtC5lwvTDWRzprvTgsvyhC7ZzGXvx1qJF773CmQXvhNJ7xJ!-2116107196!-1062729202!4701!-1; path=/cs; HttpOnly - http://t06web.avios.com/eu/en/signin
+Set-Cookie:JSESSIONID=KKsnYqtQhsF2t67BdGwLKDLBpPhB3kjmyl1KvcT4z1K82k20LJKZ!-2116107196!-1062729202!4701!-1; path=/cs; HttpOnly - http://t06web.avios.com/eu/en/collect/all-ways-to-collect
+ 
+Could you look into this issue? Thanks!
+ 
+Kind Regards,
+Selvandhan M
+
+
+======
+
+21/02/2017
+==========
+
+Thanks Surya.
+ 
+We had a look through this issue further on our end and found that the session maintenance has been caused by the cookie path ‘/cs/‘ which is configured in /local/domains/avios-cs/applications/cs/WEB-INF/weblogic.xml:
+ 
+<cookie-path>/cs</cookie-path>
+ 
+CSESSIONID Cookie on the Response:
+<image001.png>
+ 
+Since, our website doesn’t operates on ‘/cs’ path, client (browser) doesn’t sends the existing CSESSIONID cookie which looks to be causing this issue. Could you amend ‘cookie-path’ on /local/domains/avios-cs/applications/cs/WEB-INF/weblogic.xml to root path ‘/‘ and restart WCS instance and let us know to verify. Thanks!
+ 
+Kind Regards,
+Selvandhan M
+
+
+<cookie-name>CSESSIONID</cookie-name>
+<cookie-path>/</cookie-path>
+
+
+
+
+Release C.1 - 22/02/2017
+=================
+
+Add the following Under18Filter (filter) to the WebCenter Sites (CS) application deployment descriptor '<<cs-app-dir>>/WEB-INF/web.xml' before WebReferenceFilter filter.
+
+<filter>
+<filter-name>Under18Filter</filter-name>
+<filter-class>uk.co.manifesto.avios.wcs.servlet.filter.Under18Filter</filter-class>
+</filter>
+
+Add the following Under18Filter (filter-mapping) to the WebCenter Sites (CS) application deployment descriptor '<<cs-app-dir>>/WEB-INF/web.xml'right before WebReferenceFilter filter-mapping.
+
+<filter-mapping>
+<filter-name>Under18Filter</filter-name>
+<url-pattern>/Sites/*</url-pattern>
+<dispatcher>REQUEST</dispatcher>
+<dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
+Hi Surya,
+
+You will see in the release package there are two new csdt_import.sh scripts that replace the current csdt import scripts, then running the installation with the command below will run the no content import, which should be used going forward on environments where data is present. 
+
+ansible-playbook -k -u weblogic -i hosts --extra-vars "variable_host=argon6" manifesto_deployment.yml -vvvv --skip-tags "data"
+
+For fresh environments, the skip tags can be removed to import a test data pack as well.
+
+Let me know if that makes sense, 
+Thanks,
+Matt
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+ansible-playbook -k -u weblogic -i hosts --extra-vars "variable_host=argon6" manifesto_deployment.yml -vvvv --skip-tags "data"
+
+
+
+GLOBAL_NAVIGATION.COOKIE_TEXT_1=Our website works best using cookies. By continuing to use the site, you agree to the use of cookies. Read more about
+GLOBAL_NAVIGATION.COOKIES_LABEL=cookies
+GLOBAL_NAVIGATION.COOKIE_TEXT_2=and our
+GLOBAL_NAVIGATION.PRIVACY_LABEL=privacy notice.
+GLOBAL_NAVIGATION.COOKIE_ACCEPT=I accept
+
+
+
+GLOBAL_NAVIGATION.BACK_BUTTON.LABEL=Back to
+GLOBAL_NAVIGATION.HAMBURGER_MENU.TITLE=menu
+GLOBAL_NAVIGATION.LIVE_CHAT.LABEL=Live chat
+GLOBAL_NAVIGATION.SIGN_OUT.LABEL=Sign out
+GLOBAL_NAVIGATION.NOT_YOU.LABEL=Not you?
+
+
+01/March/2017 - New avios bff war deployment
+===========================================
+
+From: Matt Brooks [mailto:matt.brooks@manifesto.co.uk] 
+Sent: 01 March 2017 14:29
+To: Colin Lewis <colin.lewis@avios.com>; Ian Sullivan <ian.sullivan@avios.com>; Web Support <web.support@avios.com>
+Cc: Selina Bans <selina.bans@manifesto.co.uk>; lee.brett@manifesto.co.uk; Ian Pearce <ian.pearce@manifesto.co.uk>; Simon Bates <simon.bates@manifesto.co.uk>; curtis fox <curtis.fox@manifesto.co.uk>
+Subject: C.1 Debug Release
+
+Hello,
+
+As requested, we have prepared a new version of the BFF war file with additional debugging statements to try to identify the integration issues currently being noted within ticket WEBT-246. 
+
+This is branched from the C.1 release, and includes the additional debugging log statements ONLY. 
+
+This war file is now available at /var/tmp/manifestocopy.
+
+Installation instructions:
+- Replace installed BFF war at install location (default is /var/tmp/manifesto/webapps)
+- Restart weblogic
+
+Note: this is all academic whilst the API issues persist. 
+
+
+Thanks,
+Matt
+
+
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=helium5" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon6" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=rousseau" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=bosch" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_sitetree.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon10" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon10" manifesto_sitetree.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon10" manifesto_sitetree.yml --vault-password-file vault_pass.txt --step -vvvv
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon12" manifesto_sitetree.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=neon15" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv
+
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=argon10" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+ansible-playbook -k -i hosts --extra-vars "variable_host=blake" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data"
+
+
+Staging - 
+
+GLOBAL_NAVIGATION.BACK_BUTTON.LABEL=Back to
+GLOBAL_NAVIGATION.HAMBURGER_MENU.TITLE=menu
+GLOBAL_NAVIGATION.LIVE_CHAT.LABEL=Live chat
+GLOBAL_NAVIGATION.JOIN_AVIOS.LABEL=Join Avios
+GLOBAL_NAVIGATION.SIGN_OUT.LABEL=Sign out
+GLOBAL_NAVIGATION.NOT_YOU.LABEL=Not you?
+
+
+Site.properties --> Footer
+
+FOOTER.COPY_RIGHT.TEXT=© ##CALENDAR_YEAR## Avios, all rights reserved
+
+
+14/march/2017
+
+Created a new Hero banner for Staging env
+
+to configure Pages in Release C.1
+
+
+<filter>
+<filter-name>ProtectedPagesFilter</filter-name>
+<filter-class>uk.co.manifesto.avios.wcs.servlet.filter.ProtectedPagesFilter</filter-class>
+</filter>
+
+
+<filter-mapping>
+<filter-name>ProtectedPagesFilter</filter-name>
+<url-pattern>/Sites/*</url-pattern>
+<dispatcher>REQUEST</dispatcher>
+<dispatcher>FORWARD</dispatcher>
+</filter-mapping>
+
+
+/opt/bea/user_projects/domains/avios-cs/logs1/SitesDomain/servers
+/opt/bea/user_projects/domains/avios-cs/logs1/wcs/logs
+/opt/bea/user_projects/domains/avios-cs/logs1/spring
+
+
+
+Stage - Reference for Sign in page
+Call to Action: CTA - EN - Already a member - Sign in
+
+
+
+From: Selvandhan Manivasagam [mailto:selvandhan.manivasagam@manifesto.co.uk] 
+Sent: 18 April 2017 12:18
+To: Web Support <web.support@avios.com>
+Cc: Ian Sullivan <ian.sullivan@avios.com>; Colin Lewis <colin.lewis@avios.com>; Sazidh Ali <sazidh.ali@avios.com>; Satish Kataria <satish.kataria@avios.com>; Orall Cornelius <orall.cornelius@manifesto.co.uk>; Louise Bliss <louise.bliss@manifesto.co.uk>; Simon Bates <simon.bates@manifesto.co.uk>; Simon Firth <simon.1.firth@avios.com>; Enrique Varas <enrique.varas@manifesto.co.uk>; Matt Brooks <matt.brooks@manifesto.co.uk>; Adriana Miclos <adriana.miclos@manifesto.co.uk>; Ian Pearce <ian.pearce@manifesto.co.uk>; Mika Kanno <mika.kanno@manifesto.co.uk>
+Subject: Re: Release I (12.0) to T06
+
+Hi Surya,
+
+We have prepared a hot fix I-RC2 to resolve an issue with Estore functionality to pass referralUrl for authenticated members. This has already been deployed and tested on T06.
+
+The hot fix requires just the re-deployment of WCS jar avios-cms-platform-12.0-RC2.jar and find below the steps to apply it.
+
+1. Stop WCS weblogic instance.
+2. Delete the existing WCS jar '/local/domains/avios-cs/applications/cs/WEB-INF/lib/avios-cms-platform-12.0-RC1.jar’.
+3. Copy '/var/tmp/manifestocopy/releaseI-RC2/avios-complete-12.0/avios-cms-platform-12.0-RC2.jar' onto '/local/domains/avios-cs/applications/cs/WEB-INF/lib/‘
+4. Start WCS weblogic instance.
+
+The RC2 package releaseI-RC2.zip is available under /var/tmp/manifestocopy on argon6. Let me know if you need more information. Thanks!
+
+Cheers,
+Selvandhan M
+
+
+It all depends on the endpoint .PATCH is allowed on our API endpoints api.avios.com, wsg or partnerservices.
+It's not allowd on our WEB endpoints e.g. www.avios.com or T env such as  t05web.avios.com
+
+If its a PATCH you can look at the response you should see the F5 block page html
+If its a GET that should be allowed through and you should see that hit the Apache tier and then weblogic
+
+
+Please can you give T10 the once over when you get in tomorrow.
+[?23/?05/?2017 20:52] Nigel Oake: 
+Please can you also speak to Paul on Thursday regarding updating WCS on Prelive.  As Prelive is a clustered environment we can't use the current cloning process as all the weblogic cluster settings will get overwritten.  I guess we can roll the latest release on and then carry out the manual steps for the releases which are missing.  I'm hoping there might be a smarter way.  
+[?23/?05/?2017 20:57] Nigel Oake: 
+Please can you also think about updating WCS on Preprod.  Manifesto need to confirm that rolling out the latest release and then carrying out the manual steps in the standard way doesn't use CSDT to load content.  Also we need to make sure there is no test data in Preprod.  The ideal scenario would be to update Preprod to the latest release and then use the publish process from Stage to update the content.     
+Many thanks.  Good luck
+
+
+
+PreProd server - Blake & Bonnard
+
+Apache - Giger / Miro
+
+
+n466691@titanium>ansible-vault rekey blake
+Vault password:
+New Vault password:
+Confirm New Vault password:
+Rekey successful
+/opt/Ansible_WCS/Ansible_WCS_PreLIVE/ansible-wcs/installation/host_vars
+
+
+
+		URLs for PRD are as follows:
+https://chat.avios.com/Live/webchatLoginT.php?lng=en_gb 
+https://chat.avios.com/Live/webchatLoginT.php?lng=fr_fr
+https://chat.avios.com/Live/webchatLoginT.php?lng=es_es
+https://chat.avios.com/Live/webchatLoginT.php?lng=it_it
+https://chat.avios.com/Live/webchatLoginT.php?lng=ca_es
+
+14/06/2017&15/06/2017 - Publishing on Prelive 
+
+As suggested by Manifesto - deleted the Avios site on the Admin site and started publishing from Staging
+
+The publish failed with ERROR TImeout .Hence installed Release P on Prelive same as Staging.
+
+Error occured in the weblogic logs - jsp page not found.
+
+Deleted Stage and Tmp folders under /server/blake1 and restarted the weblogic instance.
+
+This time publishing stuck at some point and didn't progress further.
+
+So - stopped weblogic managed instance and deleted cache from /opt/wcs11/Temp directory
+
+cd to /opt/wcs11/Temp
+	- delete the following directories recursively (wherein disk cache is being maintained)
+	    cascache
+	    cscache
+	    sscache
+	    linkedcache
+	    fwcs-tmp
+2. After WCS instance startup, navigate to WCS Admin UI (as fwadmin) and navigate to the following utilities and flush the Resultset, Sites & Co-Res Caches:
+	- General Admin (Tab) --> Admin --> System Tools --> Cache Management --> Resultset Cache --> Summary
+	- General Admin (Tab) --> Admin --> System Tools --> Cache Management --> Sites Cache --> Summary
+	- General Admin (Tab) --> Admin --> System Tools --> Cache Management --> Co-Res Cache --> Summary
+	
+	
+	
+Now we started publishing assets in small chunks i.e. 2 - 3 assets at a time and the publish was successful.
+
+Ian Pearce ( Manifesto) suggested to approve and publish in a particular order ( below)
+
+1)Attribute Editors
+2)Filters
+3)Attributes
+4)Definitions
+5)Templates
+6)Site Entries
+7)CSElemetns
+8)Parent Content
+9)Content
+10)Pages
+
+Parent Content & Child Contetn the below is selected
+- Content Query
+FAQ
+FAQ Category
+Media 
+Media Category
+Module
+Module Category
+Page Furniture
+Page Furniture Category
+
+
+
+truss -fp | tee log.txt
+
+
+REL-2442 - 20June2017 - Update the below in application.properties
+
+estoreUrl=https://obuat.ssogateway.points.com/SSOGateway/gateway.do
+estoreUnauthenticatedBaseUrl=http://avios.rewardengine.com
+
+
+19/June/2017 -Manifesto Ian Pearce
+=-=================================
+https://support.oracle.com/epmos/faces/SearchDocDisplay?_adf.ctrl-state=a1mw96vmh_82&_afrLoop=211063049666152#CAUSE
+
+you should be able to find the files they are referring to on argon6 in the WEB-INF/classes/com/fatwire/systemtools/cachetool directory
+
+this will resolve teh issue about errors when we try and use the System Tools menu
+
+
+
+estoreUrl=https://obuat.ssogateway.points.com/SSOGateway/gateway.do
+estoreUnauthenticatedBaseUrl=http://avios.rewardengine.com
+
+
+10/July/2017:
+
+sudowl java -classpath /opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/lib/*:/opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/classes/:/opt/wcs11/bin COM.FutureTense.Apps.CatalogMover -b http://bosch:4701/cs/CatalogManager -u fwadmin -p xceladmin -x import -f /var/tmp/manifesto/ElementCatalog/ElementCatalog.html
+
+raphael - scheduler.avios.com
+path to update the jobs/job chains
+/opt/batch/scheduler_1.9.2/config/live/WebSupport
+
+
+Vermeer
+========
+/local/weblogic/builds/WCS-Manifesto
+
+
+Set Display - GUI Mode
+======================
+/usr/openwin/bin/xauth list
+/usr/openwin/bin/xauth add
+
+Connect the server from my VM terminal using the below command.
+ssh -X username@hostname
+execute the below command to get the list.
+/usr/openwin/bin/xauth list 
+
+p466691@titian>/usr/openwin/bin/xauth list
+blake/unix:11  MIT-MAGIC-COOKIE-1  6594f58faf313e6e7e6fd6bd328396ff
+blake/unix:12  MIT-MAGIC-COOKIE-1  0fff066ebfa4ab0a6125ba8c2edc27a1
+chagall/unix:10  MIT-MAGIC-COOKIE-1  9e3f4dcd55cd2492e3b35653666c4c46
+gauguin/unix:10  MIT-MAGIC-COOKIE-1  9ce3685f81a9d20af4518b2d37490bef
+davinci/unix:10  MIT-MAGIC-COOKIE-1  c02a51ec09c991b9e85f222ce2c468d0
+vangogh/unix:10  MIT-MAGIC-COOKIE-1  d15b66638411e1d79806f71a96757f28
+titian/unix:10  MIT-MAGIC-COOKIE-1  0bc7ef1babdcee52f705ea9dd031fe44
+turner/unix:10  MIT-MAGIC-COOKIE-1  ea8cb2cc1e3c6ac6645871f77583629e
+
+Execute the below command to get the DISPLAY details.
+
+echo DISPLAY
+EX:- 
+p466691@titian>echo $DISPLAY
+localhost:10.0
+
+Login as weblogic user -
+
+sudo su - weblogic
+
+Execute the below command to add and autherise the server display cookie from the previous user to this user.
+
+/usr/openwin/bin/xauth add turner/unix:10  MIT-MAGIC-COOKIE-1  ea8cb2cc1e3c6ac6645871f77583629e
+
+/usr/openwin/bin/xauth add titian/unix:10  MIT-MAGIC-COOKIE-1  0bc7ef1babdcee52f705ea9dd031fe44
+
+Then export the display and the hostname/IP value from the previous echo DISPLAY result.
+$ export DISPLAY=localhost:10.0
+$ echo $DISPLAY
+localhost:10.0
+
+
+
+
+
+picasso	sisley	bazille
+CSAP	CSBP	CSCP 
+
+Connection descriptors:
+
+CSAP.world=(DESCRIPTION=(SOURCE_ROUTE=OFF)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=picasso)(PORT=1521)))(CONNECT_DATA=(SID=CSAP)(SERVER=DEDICATED)))
+CSBP.world=(DESCRIPTION=(SOURCE_ROUTE=OFF)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=sisley)(PORT=1521)))(CONNECT_DATA=(SID=CSBP)(SERVER=DEDICATED)))
+CSCP.world=(DESCRIPTION=(SOURCE_ROUTE=OFF)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=bazille)(PORT=1521)))(CONNECT_DATA=(SID=CSCP)(SERVER=DEDICATED)))
+
+
+Steps to install support tools - Manifesto
+
+As Ian mentioned, I can provide you the steps I have taken to install the support tool on T06
+- Added all ACLs for fwadmin user (including SiteGod)
+- Changed the cookie name from CSESSIONID to JSESSIONID on /local/domains/avios-cs/applications/cs/WEB-INF/weblogic.xml
+- Imported the support tool via Content Server Explorer and saved the changes. Alternatively, you can use catalogmover tool to import the support tool.
+- You can then access the support tool using http[s]://[servername]:[port]/cs/ContentServer?pagename=Support/Home
+
+======================================================================================================
+
+
+Publishing error - too many files
+
+as weblogic user - check plimit
+
+ex:-
+
+p466691@turner>dtag | grep CS
+weblogic 22472 22471   0 13:07:08 pts/2       6:05 /opt/jdk/jdk170_101/bin/sparcv9/java -DTag=AVCS1 -Dweblogic.Name=turner_cs1 -Dw
+weblogic  1825  1799   0 12:33:43 pts/2       2:39 /opt/jdk/jdk170_101/bin/sparcv9/java -server -DTag=AVCSadmin -Xms64m -Xmx388m -
+
+
+p466691@turner>sudowl plimit 22472
+22472:  /opt/jdk/jdk170_101/bin/sparcv9/java -DTag=AVCS1 -Dweblogic.Name=turne
+   resource              current         maximum
+  time(seconds)         unlimited       unlimited
+  file(blocks)          unlimited       unlimited
+  data(kbytes)          unlimited       unlimited
+  stack(kbytes)         8192            unlimited
+  coredump(blocks)      unlimited       unlimited
+  nofiles(descriptors)  65536           65536
+  vmemory(kbytes)       unlimited       unlimited
+
+  
+  
+  ==============================
+
+
+
+
+
+
+
+

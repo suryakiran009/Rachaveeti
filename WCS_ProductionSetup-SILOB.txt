@@ -1,0 +1,169 @@
+SILO B
+davinci
+Vangogh
+
+http://davinci:4700/console
+username - system
+Password - c1ands3y
+
+Weblogic Admin : cs-admin
+Port           : 4700
+
+ManagedServer1 : davinci_cs1
+Port           : 4701
+
+ManagedServer2 : Vangogh_cs1
+Port           : 4701
+
+Cluster        : AVCSCluster
+
+/opt/bea/user_projects/domains/avios-cs
+
+Machine Names
+=============
+Type - Unix Machines
+1)davinci
+Servers - csadmin,davinci_cs1
+2)Vangogh
+Servers - Vangogh_cs1
+
+/opt/jdk/jdk170_101
+
+
+DataSources:
+
+Database - Attempting to contact (DESCRIPTION= (ADDRESS=(PROTOCOL=TCP)(HOST=sisley)(PORT=1521)) (CONNECT_DATA= (SERVICE_NAME=CSBP)))
+Schema Login - cs_owner/p4bl1SH3rB
+
+Path - /opt/bea/user_projects/domains/avios-cs
+
+
+
+
+Error occured when select the JAVA_VENDOR as Oracle.Hence changed to Sun.
+
+Also delete the BEA_JAVA_HOME property and add the jdkhome to SUN_JAVA_HOME as below
+
+
+BEA_JAVA_HOME=""
+export BEA_JAVA_HOME
+
+SUN_JAVA_HOME="/opt/jdk/jdk170_101"
+export SUN_JAVA_HOME
+
+if [ "${JAVA_VENDOR}" = "Oracle" ] ; then
+        JAVA_HOME="${BEA_JAVA_HOME}"
+        export JAVA_HOME
+else
+        if [ "${JAVA_VENDOR}" = "Sun" ] ; then
+                JAVA_HOME="${SUN_JAVA_HOME}"
+                export JAVA_HOME
+        else
+                JAVA_VENDOR="Sun"
+                export JAVA_VENDOR
+                JAVA_HOME="/opt/jdk/jdk170_101"
+                export JAVA_HOME
+        fi
+
+
+
+==================================================
+WCS BASELINE INSTALLATION
+=========================
+
+ansible-playbook -k -i hosts manifesto_wcs.yml --vault-password-file vault_pass.txt --step -vvvv --ask-become-pass
+
+
+WCS_PATCH Installation 
+=====
+
+ansible-playbook -k -i hosts manifesto_patch.yml --vault-password-file vault_pass.txt --step -vvvv --ask-become-pass
+
+WCS_EHCACHE Installation
+=======================
+
+ansible-playbook -k -i hosts manifesto_ehcache.yml --vault-password-file vault_pass.txt --step -vvvv --ask-become-pass
+
+=====================================================
+
+Multicast address has been changed as it was same for SILOA&SILOB.Changed the address from 230.0.0.0 to 233.0.0.0
+p466691@davinci>grep multicastGroupAddress *
+cas-cache.xml:            properties="peerDiscovery=automatic, multicastGroupAddress=233.0.0.0,
+cs-cache.xml:            properties="peerDiscovery=automatic, multicastGroupAddress=233.0.0.0,
+linked-cache.xml:            properties="peerDiscovery=automatic, multicastGroupAddress=233.0.0.0,
+ss-cache.xml:            properties="peerDiscovery=automatic, multicastGroupAddress=233.0.0.0,
+
+1. 1. Take a backup of jbossTicketCacheReplicationConfig.xml file in the bin folder 
+
+2. Open the above file for edit and find the following line.
+
+    <attribute name="ClusterName">TreeCache-Cluster</attribute>
+3. Change the above line as below
+
+    <attribute name="ClusterName">TreeCache-Cluster-Node1</attribute>
+
+4. Save the file and restart the server after removing the contents of java.io.tempdir. 
+
+5. Retest and notice the issue no longer exists.
+
+
+==================================================================================================================================================================================================================================
+
+Now Deploying Manifesto Release for Avios - webapp , proxy etc
+
+Last Release by Manifesto - Release R
+		
+ansible-playbook -k -i hosts --extra-vars "variable_host=davinci" manifesto_deployment.yml --vault-password-file vault_pass.txt --step -vvvv --skip-tags "data" --ask-become-pass		
+		
+		
+sudowl java -classpath /opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/lib/*:/opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/classes/:/opt/wcs11/bin COM.FutureTense.Apps.CatalogMover -b http://davinci:4701/cs/CatalogManager -u fwadmin -p xceladmin -x import -f /var/tmp/manifesto/ElementCatalog/ElementCatalog.html
+
+
+p466691@davinci>sudowl java -classpath /opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/lib/*:/opt/bea/user_projects/domains/avios-cs/applications/cs/WEB-INF/classes/:/opt/wcs11/bin COM.FutureTense.Apps.CatalogMover -b http://davinci:4701/cs/CatalogManager -u fwadmin -p xceladmin -x import -f /var/tmp/manifesto/ElementCatalog/ElementCatalog.html
+Oracle WebCenter Sites 11gR1 11.1.1.8.0
+Copyright (c) 2011,2013, Oracle and/or its affiliates. All Rights Reserved.
+
+CatalogMover 11.1.1.8.0  Build Date: May 06 2016 at 05:30:42 Build Number: 276 Revision:182627
+
+No Connections
+Attempting to load ESAPI.properties via file I/O.
+Attempting to load ESAPI.properties as resource file via file I/O.
+Not found in 'org.owasp.esapi.resources' directory or file not readable: /var/tmp/manifesto/ElementCatalog/ESAPI.properties
+Not found in SystemResource Directory/resourceDirectory: .esapi/ESAPI.properties
+Not found in 'user.home' (/export/home/weblogic) directory: /export/home/weblogic/esapi/ESAPI.properties
+Loading ESAPI.properties via file I/O failed. Exception was: java.io.FileNotFoundException
+Attempting to load ESAPI.properties via the classpath.
+SUCCESSFULLY LOADED ESAPI.properties via the CLASSPATH from '/ (root)' using current thread context class loader!
+Attempting to load validation.properties via file I/O.
+Attempting to load validation.properties as resource file via file I/O.
+Not found in 'org.owasp.esapi.resources' directory or file not readable: /var/tmp/manifesto/ElementCatalog/validation.properties
+Not found in SystemResource Directory/resourceDirectory: .esapi/validation.properties
+Not found in 'user.home' (/export/home/weblogic) directory: /export/home/weblogic/esapi/validation.properties
+Loading validation.properties via file I/O failed.
+Attempting to load validation.properties via the classpath.
+SUCCESSFULLY LOADED validation.properties via the CLASSPATH from '/ (root)' using current thread context class loader!
+Connected to localhost
+Loaded Catalog List from localhost
+Pushing 10 rows per post
+Post Results Created temporary table tt1501859159709
+Added row: elementname = CustomElements/OpenMarket/Xcelerate/Util/GetUrlExpressions
+
+07.08.2017 14:48:03 *INFO * UpdateChecker: New update(s) found: 2.6.5 [http://www.terracotta.org/confluence/display/release/Release+Notes+Ehcache+Core+2.6]. Please check http://ehcache.org for the latest version. (UpdateChecker.java, line 98)
+Committed changes to catalog ElementCatalog
+Deleted temporary table tt1501859159709
+
+Successfully imported /var/tmp/manifesto/ElementCatalog/ElementCatalog.html
+CatalogMover exited.
+Disconnected from localhost.
+07.08.2017 14:48:03 *WARN * ehcache: Running Shutdown hook for Cache Thread-4 (EhCacheObjectCache.java, line 577)
+07.08.2017 14:48:03 *WARN * ehcache: Completed running Shutdown hook for Cache Thread-4 (EhCacheObjectCache.java, line 579)
+/var/tmp/manifesto/ElementCatalog
+
+
+
+
+
+
+
+
+

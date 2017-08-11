@@ -1,0 +1,72 @@
+
+n466691@helium5>grep helium5 *
+
+/opt/wcs11
+
+databaseloader.ini:dbl.loginurl=http\://helium5\:4701/cs/CatalogManager
+futuretense_xcel.ini:xcelerate.batchhost=helium5\:4701
+futuretense.ini:cs.eventhost=http\://helium5\:4701
+transact.ini:tx.defaultStore.catalogServer=helium5
+transact.ini:tx.transactServer=helium5
+transact.ini:tx.defaultStore.fulfillmentServer=helium5
+
+/opt/wcs11
+
+
+
+n466691@helium5>grep helium5 *
+/opt/wcs11/bin
+
+cas.properties:server.name=http://helium5:4701
+customBeans.xml:<value>http://helium5:4701/cs/*</value>
+deployerConfigContext.xml:<property name="loginUrl" value="http://helium5:4701/cs/ContentServer?pagename=fatwire/wem/sso/ssoLogin" />
+/opt/wcs11/bin
+
+
+/opt/wcs11/ominstallinfo
+
+ominstallinfo/omii.ini:CSInstallWebServerAddress=helium5
+ominstallinfo/omii.ini:hostname=helium5
+ominstallinfo/omii.ini:CASHostName=helium5
+ominstallinfo/omii.ini:CASHostNameActual=helium5
+ominstallinfo/omii.ini:CASHostNameLocal=helium5
+ominstallinfo/omii.ini:CSConnectString=http\://helium5\:4701/cs/
+/opt/wcs11
+
+/opt/wcs11/bin/cas-spring-configuration
+bin/cas-spring-configuration/customDefaultWEMSSObeans.xml:p:casLoginUrl="http://helium5:4701/cas/login"
+bin/cas-spring-configuration/customDefaultWEMSSObeans.xml:p:resolverUrl="http://helium5:4701/cas/custom/customCsResolver.jsp"
+/opt/wcs11
+
+/opt/wcs11/bin
+jbossTicketCacheReplicationConfig.xml:                      bind_addr="192.168.10.157"
+
+
+n466691@helium5>grep helium5 */*
+
+/opt/bea/user_projects/domains/avios-cs/applications/cs
+
+Xcelerate/SampleSites.html:        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=http://helium5:4701/cs/ContentServer?pagename=OpenMarket/Demos/index">
+/opt/bea/user_projects/domains/avios-cs/applications/cs
+
+
+n466691@helium5>grep helium5 */*/*
+WEB-INF/classes/AdvPub.xml:                             <value>http://helium5:4701/cs/ContentServer</value>
+WEB-INF/classes/satellite.properties:host=helium5
+WEB-INF/classes/SSOConfig.xml:    <property name="casUrl" value="http://helium5:4701/cas" />
+WEB-INF/classes/SSOConfig.xml:  <property name="casInternalURL" value="http://helium5:4701/cas" />
+Xcelerate/wsdl/Asset.wsdl:                      <soap:address location="http://helium5:4701/cs/ContentServer" />
+Xcelerate/wsdl/AssetSet.wsdl:                   <soap:address location="http://helium5:4701/cs/ContentServer"/>
+Xcelerate/wsdl/AssetType.wsdl:                  <soap:address location="http://helium5:4701/cs/ContentServer"/>
+Xcelerate/wsdl/Miscellaneous.wsdl:                      <soap:address location="http://helium5:4701/cs/ContentServer"/>
+Xcelerate/wsdl/SitePlan.wsdl:                   <soap:address location="http://helium5:4701/cs/ContentServer"/>
+/opt/bea/user_projects/domains/avios-cs/applications/cs
+
+
+application.properties
+
+
+
+
+
+
